@@ -1,0 +1,99 @@
+.Home{
+  background-color: white;
+  min-height: 100vh;
+}
+
+
+.header {
+  background-color: #0077b6;
+      text-align: center;
+    /* background: linear-gradient(to right,#59d3d3, #4a81d3); */
+    font-size: 15px;
+    /* width: 40px; */
+    height: 50px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* justify-content: center; */
+    /* font-size: calc(10px + 2vmin); */
+    color: black;
+    
+  }
+  .header input{
+    margin-left:150px;
+  }
+
+  /* input[type=text]:focus {
+    width: 100%;
+  } */
+
+  button {
+    background-color: lightgray; 
+    border: none;
+    color: blue;
+    padding: 10px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+
+  .search-box {
+    outline: none;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 40px;
+    height: 20px;
+    width: 15%;
+    border-radius: 2px;
+    font-size: 15px;
+    border-color: transparent;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+  }
+
+  #signup {
+    float: right;
+    position: absolute;
+    top: 1px; 
+    right: 5px; 
+    /*other style you may need*/
+ }
+ #login {
+  float: left;
+  position: absolute;
+  top: 1px; 
+  right: 170px; 
+}
+
+.footer {
+  background-color: #0077b6;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background: linear-gradient(to right,  #092247 ,#59d3d3); */
+  color: black;
+  text-align: center;
+}
+
+
+#about{
+  /* float: left; */
+  position: absolute;
+  top: 0px; 
+  right: 150px;  
+}
+
+#contact{
+  position: absolute;
+  top: 0px; 
+  right: 5px; 
+} 
+

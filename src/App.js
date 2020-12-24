@@ -1,36 +1,22 @@
 import './App.css';
-// import LoginForm from '../LoginForm/LoginForm'
+import Login from './components/LoginForm'
+// import LoginForm from './components/LoginForm/LoginForm'
+import Appbar from './components/Home/appbar'
+import Footer from './components/Home/footer'
 // import Home from '../Home/Home'
-// import Signup from '../Signup/Signup'
+import Signup from './components/Signup'
 import AppRouter from './routing'
+import Home from './components/Home/home'
 
 
 function App() {
   return (
     <div className="App">
-      <AppRouter/>
+      <Appbar/>
+      <Home/>
+      <Footer/>
 
-
-     {/* <Router>
-        <Link to="/home">Home</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Signup</Link>
-
-
-        { <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/login">
-          <LoginForm />
-        </Route>
-        <Route path="/signup">
-          <Signup />
-        </Route>
-      </Switch> }
-
-      </Router>
-    */}
+  
     </div>
   );
 }

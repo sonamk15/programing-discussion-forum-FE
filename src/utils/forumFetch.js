@@ -1,7 +1,5 @@
 import axios from "axios";
 
-const BASE_URL = 'htpp://localhost/5000/api/';
-
 export default async function forumFetch(
   url,
   method = "GET",
@@ -9,7 +7,7 @@ export default async function forumFetch(
   useAuth = true
 ) {
   const opts = {
-    url: `${BASE_URL}${url}`,
+    url: url,
     method,
     ...options
   };
@@ -31,8 +29,7 @@ export default async function forumFetch(
       data: resp.data
     }
   } catch (err) {
-    return {
-      sucess: false,
+    return {     sucess: false,
       error_message: err.message
     }
   }
