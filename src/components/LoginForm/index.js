@@ -22,7 +22,7 @@ import axios from 'axios';
 const Login = () => {
     const paperStyle = {
         padding: 20,
-        height: '70vh',
+        height: '65vh',
         width: '300px',
         margin: '20px auto'
 

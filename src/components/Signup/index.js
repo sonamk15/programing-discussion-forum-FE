@@ -14,7 +14,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 const Signup = () => {
     const paperStyle = {
         padding: 20,
-        height: '70vh',
+        height: '65vh',
         width: '280px',
         margin: '20px auto'
 

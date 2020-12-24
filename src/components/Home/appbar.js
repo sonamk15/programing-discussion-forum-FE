@@ -26,6 +26,11 @@ const Appbar = () => {
         marginLeft: -12,
         marginRight: 20,
     }
+
+    const style  = {
+        color:'black'
+    }
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -54,8 +59,8 @@ const Appbar = () => {
                     </Menu>
 
                 </IconButton>
-                <Typography variant="h6">
-                    Programming Discussion Forum
+                <Typography variant="h6" style= {style}>
+                   <b> Programming Discussion Forum</b>
                 </Typography>
             </Toolbar>
         </AppBar>
