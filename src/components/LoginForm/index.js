@@ -18,7 +18,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
 
-const Login = () => {
+const Login = (props) => {
     const paperStyle = {
         padding: 20,
         height: '65vh',
@@ -54,13 +54,22 @@ const Login = () => {
                 email: email,
                 password: password
             }
-            axios.post('login', data)
+            axios.post('api/login', data)
                 .then(res => {
                     if (res.data.token !== undefined) {
                         localStorage.setItem("token", res.data.token);
-                        alert(res.data.message);
-                    }
-
+                        axios.post('api/token/verify',{token:res.data.token})
+                        .then(res => {
+                            if(res.data){
+                                localStorage.setItem('userDetails', JSON.stringify(res.data))
+                                // props.history.push("/query")
+                                console.log(props)
+                            }
+                            else{
+                                alert('User not found')
+                            }
+                        })
+                   }
                 })
                 .catch(err => console.log(err))
         }
@@ -79,7 +88,6 @@ const Login = () => {
                     placeholder='Enter email'
                     type='text'
                     onChange={(e) => setemail(e.target.value)}
-
                     fullWidth
                     required
                     InputProps={{

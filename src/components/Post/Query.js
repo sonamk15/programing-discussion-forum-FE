@@ -1,21 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import Category from './category';
 
 
 const Query = () => {
     const [query, setQuery] = useState('');
-    const [userId, setUserID] = useState(1);
+    const [user, setUser] = useState({
+        id:null,
+        name:null,
+        profile:null
+    });
     const [topic, setTopic] = useState('');
+
+    useEffect(()=>{
+        updateUserDetails()
+    },[])
+
+    const updateUserDetails = ()=>{
+        const {id, name, profile} = JSON.parse(localStorage.getItem("userDetails"))
+        setUser((prvState) => (
+            {
+                ...prvState,
+                id,
+                name,
+                profile
+            }
+        ))   
+    }
 
     const addComment = () => {
         const data = {
             topic: topic,
             issue: query,
-            userId: userId
+            userId: user.id
         }
-        axios.post('query', data)
+        axios.post('api/query', data)
         .then(res => {
+            console.log(res)
         })
         .catch(err => console.log(err))
     }
