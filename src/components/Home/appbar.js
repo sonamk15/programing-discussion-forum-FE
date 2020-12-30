@@ -11,22 +11,17 @@ import {
 
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import Logo from '../../pngegg.png';
+
 
 const Appbar = () => {
     const appbarStyle = {
         backgroundColor: '#28abe5'
     }
-    const signup = {
-        float: 'right',
-        position: 'absolute',
-        top: '15px',
-        right: '0px'
-    }
     const menuButton = {
         marginLeft: -12,
         marginRight: 20,
     }
-
     const style  = {
         color:'black'
     }
@@ -60,11 +55,11 @@ const Appbar = () => {
 
                 </IconButton>
                 <Typography variant="h6" style= {style}>
-                   <b> Programming Discussion Forum</b>
+                   {/* <b> Programming Discussion Forum</b> */}
+                   <img src={Logo} alt='logo' />
                 </Typography>
             </Toolbar>
         </AppBar>
-
     )
 }
 

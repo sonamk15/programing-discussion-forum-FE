@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import {
     Grid,
     Paper,
@@ -13,11 +13,10 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import LockIcon from '@material-ui/icons/Lock';
 import EmailIcon from '@material-ui/icons/Email';
-import {VisibilityIcon} from '@material-ui/icons/Visibility';
+import { VisibilityIcon } from '@material-ui/icons/Visibility';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
-
 
 const Login = () => {
     const paperStyle = {
@@ -43,35 +42,29 @@ const Login = () => {
         color: 'grey'
     }
 
- 
 
-
-   const [showPassword, setShowPassword] = useState(false);
-//    const handleClickShowPassword = () => setShowPassword(!showPassword);
-//    const handleMouseDownPassword = () => setShowPassword(!showPassword);
-
+    const [showPassword, setShowPassword] = useState(false);
+    //    const handleClickShowPassword = () => setShowPassword(!showPassword);
+    //    const handleMouseDownPassword = () => setShowPassword(!showPassword);
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
 
+        const login = () => {
+            const data = {
+                email: email,
+                password: password
+            }
+            axios.post('login', data)
+                .then(res => {
+                    if (res.data.token !== undefined) {
+                        localStorage.setItem("token", res.data.token);
+                        alert(res.data.message);
+                    }
 
-    const login = ()=> {
-        // console.warn("state ",+ email)
-        // console.warn("state "+ password)
-        const data={
-            email:email,
-            password:password
-          }
-        axios.post('login',data)
-        .then(res=>{
-          alert(res.data.message)
-          console.log(res.data);
-          if(res.data.message === "Your Account is Created"){
-          }
-          
-        })
-        .catch(err=>console.log(err))
-      }
-   
+                })
+                .catch(err => console.log(err))
+        }
+
     return (
         <Grid>
             <Paper elevation={10} style={paperStyle}>
@@ -85,7 +78,8 @@ const Login = () => {
                     label="Email"
                     placeholder='Enter email'
                     type='text'
-                    onChange={(e)=>setemail(e.target.value)}
+                    onChange={(e) => setemail(e.target.value)}
+
                     fullWidth
                     required
                     InputProps={{
@@ -94,7 +88,6 @@ const Login = () => {
                                 <EmailIcon />
                             </InputAdornment>
                         )
-                        
                     }}
                 />
                 <br /><br />
@@ -103,8 +96,8 @@ const Login = () => {
                     id="input-with-icon-textfield"
                     label="Password"
                     placeholder='Enter Password'
-                    type={showPassword ? "text" : "password"} 
-                    onChange={(e)=>setpassword(e.target.value)}
+                    type={showPassword ? "text" : "password"}
+                    onChange={(e) => setpassword(e.target.value)}
                     fullWidth
                     required
                     InputProps={{
@@ -115,17 +108,17 @@ const Login = () => {
                         ),
                         endAdornment: (
                             <InputAdornment position="end">
-                              <IconButton
-                                aria-label="toggle password visibility"
+                                <IconButton
+                                    aria-label="toggle password visibility"
                                 // onClick={handleClickShowPassword}
                                 // onMouseDown={handleMouseDownPassword}
-                              >
-                                {/* {showPassword ? <Visibility /> : <VisibilityOff />} */}
-                              </IconButton>
+                                >
+                                    {/* {showPassword ? <Visibility /> : <VisibilityOff />} */}
+                                </IconButton>
                             </InputAdornment>
-                          )
+                        )
                     }}
-                    
+
                 />
 
                 <br /><br />
