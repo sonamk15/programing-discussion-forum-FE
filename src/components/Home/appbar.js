@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import {
     AppBar,
     Toolbar,
@@ -10,7 +11,7 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import Logo from '../../pngegg.png';
-
+import './index.css';
 
 const Appbar = () => {
     const appbarStyle = {
@@ -54,6 +55,10 @@ const Appbar = () => {
                    {/* <b> Programming Discussion Forum</b> */}
                    <img src={Logo} alt='logo' />
                 </Typography>
+                <div className='header'>
+                    <a href="/login" id="login"><b> Login</b></a>
+                    <a href="/signup" id="signup"><b>Sign Up</b></a>
+                </div>
             </Toolbar>
         </AppBar>
     )

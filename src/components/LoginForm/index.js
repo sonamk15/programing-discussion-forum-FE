@@ -18,7 +18,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
 
 const Login = (props) => {
-    console.log(props);
     const paperStyle = {
         padding: 20,
         height: '65vh',
@@ -45,31 +44,29 @@ const Login = (props) => {
     const [showPassword, setShowPassword] = useState(false);
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
-
-        const login = () => {
-            const data = {
-                email: email,
-                password: password
-            }
-            axios.post('api/login', data)
-                .then(res => {
-                    if (res.data.token !== undefined) {
-                        localStorage.setItem("token", res.data.token);
-                        axios.post('api/token/verify',{token:res.data.token})
-                        .then(res => {
-                            if(res.data){
-                                localStorage.setItem('userDetails', JSON.stringify(res.data))
-                                props.history.push("/query", '')
-                                console.log(props)
-                            }
-                            else{
-                                alert('User not found')
-                            }
-                        })
-                   }
-                })
-                .catch(err => console.log(err))
+    
+    const handelLogin = () => {
+        const data = {
+            email: email,
+            password: password
         }
+        axios.post('api/login', data)
+        .then(res => {
+            if (res.data.token !== undefined) {
+                localStorage.setItem("token", res.data.token);
+                axios.post('api/token/verify',{token:res.data.token})
+                .then(res => {
+                    if(res.data){
+                        localStorage.setItem('userDetails', JSON.stringify(res.data))
+                        console.log(props)
+                        props.history.push('/query')
+                    } else{
+                        alert('User not found')
+                    }
+                })
+            }
+        }).catch(err => console.log(err))
+    }
 
     return (
         <Grid>
@@ -137,13 +134,11 @@ const Login = (props) => {
                     }
                     label="Remember me"
                 /><br />
-                <Button variant="contained" style={btnstyle} fullWidth onClick={login}>Sign In</Button>
+                <Button variant="contained" style={btnstyle} fullWidth onClick={handelLogin}>Sign In</Button>
                 <Typography align='right'> <Link href="#">Forgot Password</Link></Typography>
                 {/* <p>Don't have an account?</p> */}
                 {/* <Typography align='right'>Don't have an account?<Link href="#" >Sign Up</Link></Typography> */}
-
             </Paper>
-
         </Grid>
     )
 }
