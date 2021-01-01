@@ -19,6 +19,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
 
 const Login = (props) => {
+    console.log(props);
     const paperStyle = {
         padding: 20,
         height: '65vh',
@@ -42,10 +43,7 @@ const Login = (props) => {
         color: 'grey'
     }
 
-
     const [showPassword, setShowPassword] = useState(false);
-    //    const handleClickShowPassword = () => setShowPassword(!showPassword);
-    //    const handleMouseDownPassword = () => setShowPassword(!showPassword);
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
 

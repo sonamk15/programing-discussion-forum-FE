@@ -9,7 +9,7 @@ import Query from '../components/Post/Query';
 import Login from '../components/LoginForm'
 import Signup from '../components/Signup'
 
-
+// console.log(history)
 
 const AppRouter = () => (
     <Router history = {history}> 
@@ -17,7 +17,7 @@ const AppRouter = () => (
             <PublicRoute path='/' exact={true} component={Home} /> 
             <PublicRoute path='/login' exact={true} component={Login} /> 
             <PublicRoute path='/signup' exact={true} component={Signup} /> 
-            <PrivateRoute path='/query' component={Query} />
+            <PrivateRoute path='/query' exact={true} component={Query} />
         </Switch>
     </Router>
 )

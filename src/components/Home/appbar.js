@@ -38,10 +38,8 @@ const Appbar = () => {
     return (
         <AppBar position="static" style={appbarStyle}>
             <Toolbar>
-                <IconButton style={menuButton} color="inherit" aria-label="Menu">
-                    <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                        <MenuIcon />
-                    </Button>
+                <IconButton onClick={handleClick} style={menuButton} color="inherit" aria-label="Menu">
+                    <MenuIcon />
                     <Menu
                         id="simple-menu"
                         anchorEl={anchorEl}
