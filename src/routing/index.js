@@ -1,25 +1,27 @@
 import React from 'react';
 import { Router, Switch } from 'react-router-dom';
-import {nest} from 'recompose'
-import history from '../utils/history';
+import { nest } from 'recompose';
 import PublicRoute from './publicRouter';
 import PrivateRoute from './privateRouter';
-import Home from '../components/Home/home'
+import Home from '../components/Home'
 import Query from '../components/Post/Query';
-import Login from '../components/LoginForm'
-import Signup from '../components/Signup'
+import Login from '../components/LoginForm';
+import Signup from '../components/Signup';
+import { createBrowserHistory } from "history";
 
-// console.log(history)
+export const appHistory = createBrowserHistory();
 
 const AppRouter = () => (
-    <Router history = {history}> 
+    <Router history={appHistory} > 
         <Switch>
-            <PublicRoute path='/' exact={true} component={Home} /> 
-            <PublicRoute path='/login' exact={true} component={Login} /> 
-            <PublicRoute path='/signup' exact={true} component={Signup} /> 
-            <PrivateRoute path='/query' exact={true} component={Query} />
+            <PublicRoute path='/' component={Home} exact={true}/> 
+            <PublicRoute path='/login' component={Login} exact={true}/> 
+            <PublicRoute path='/signup' component={Signup} exact={true}/> 
+            <PrivateRoute path='/query' component={Query} />
         </Switch>
     </Router>
 )
 
-export default nest(AppRouter)
+export default nest(
+    AppRouter,
+  );

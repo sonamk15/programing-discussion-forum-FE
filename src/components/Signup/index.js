@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
     Grid,
     Paper,
@@ -9,9 +9,9 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import forumFetch from "../../utils/forumFetch";
 
-
-const Signup = () => {
+const Signup = (props) => {
     const paperStyle = {
         padding: 20,
         height: '65vh',
@@ -35,6 +35,40 @@ const Signup = () => {
         color: 'grey'
     }
 
+    const [initialState, setInitialState] = useState({
+        name: "",
+        email:"",
+        password: ""
+    });
+
+    const handelChange = (event) => {
+        const {name, value} = event.target;
+
+        setInitialState((prevState) => ({
+            ...prevState,
+            [name]: value
+        }))
+    };
+
+    const handelSubmit = () => {
+        const {name, email, password} = initialState;
+        if(name && email && password) {
+            forumFetch('api/signup', 'POST', {
+                data: {
+                    name,
+                    email,
+                    password
+                }
+            }).then((res) => {
+                if(res.data) {
+                    console.log(props)
+                }
+            })
+        } else {
+            alert("All feilds are required!")
+        }
+    };
+    console.log(props, "Pralhad")
     return (
         <Grid>
             <Paper elevation={10} style={paperStyle}>
@@ -43,11 +77,11 @@ const Signup = () => {
                     <h3 style={heading}>Sign Up</h3>
                 </Grid>
 
-                <TextField label='Name' placeholder='Name' fullWidth required />
+                <TextField label='Name' value={initialState.name} name="name" placeholder='Name' fullWidth required onChange={handelChange} />
 
-                <TextField label='Email' placeholder='Enter email' fullWidth required />
+                <TextField label='Email' value={initialState.email} name="email" placeholder='Enter email' fullWidth required onChange={handelChange}/>
                 {/* <Avatar><LockIcon/></Avatar> */}
-                <TextField label='Password' placeholder='Enter password' type='password' fullWidth required />
+                <TextField label='Password' value={initialState.password} name="password" placeholder='Enter password' type='password' fullWidth required onChange={handelChange} />
 
                 <br /><br />
 
@@ -60,7 +94,7 @@ const Signup = () => {
                     }
                     label="Remember me"
                 /><br />
-                <Button variant="contained" style={btnstyle} fullWidth>Sign Up</Button>
+                <Button variant="contained" onClick={handelSubmit} style={btnstyle} fullWidth>Sign Up</Button>
             </Paper>
 
         </Grid>
