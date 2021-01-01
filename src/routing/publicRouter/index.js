@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect, Router } from 'react-router-dom';
+import { Route} from 'react-router-dom';
 
 const PublicRoute = ({component: Component, ...rest}) => (
     <Route {...rest} component={(props) => ((

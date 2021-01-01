@@ -34,6 +34,7 @@ const Query = () => {
             issue: query,
             userId: user.id
         }
+        console.log(data);
         axios.post('api/query', data)
         .then(res => {
             console.log(res)
@@ -47,7 +48,7 @@ const Query = () => {
                 <span style={{ width: '20%' }} className='list'>
                     <select onChange={(e) => setTopic(e.target.value)}>
                         {Category.map((topic, idx) => (
-                            <option value={topic}>{topic}</option>))}
+                            <option key={idx} value={topic}>{topic}</option>))}
                     </select>
                 </span>
 

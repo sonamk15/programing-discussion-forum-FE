@@ -13,7 +13,6 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import LockIcon from '@material-ui/icons/Lock';
 import EmailIcon from '@material-ui/icons/Email';
-import { VisibilityIcon } from '@material-ui/icons/Visibility';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
@@ -60,7 +59,7 @@ const Login = (props) => {
                         .then(res => {
                             if(res.data){
                                 localStorage.setItem('userDetails', JSON.stringify(res.data))
-                                // props.history.push("/query")
+                                props.history.push("/query", '')
                                 console.log(props)
                             }
                             else{
