@@ -4,6 +4,8 @@
 /node_modules
 /src/components/Home/navbar.js
 /src/test.js
+.eslintcache
+.package-lock.json
 
 
 /.pnp
