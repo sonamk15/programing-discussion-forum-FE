@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect} from 'react-router-dom';
 
-const isAuthenticated = localStorage.getItem("userdetails");
+const isAuthenticated = localStorage.getItem("userDetails");
 
 export const PublicRoute = ({
     component: Component,

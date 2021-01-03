@@ -16,6 +16,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
+import './styles.scss'
 
 const Login = (props) => {
     const paperStyle = {
@@ -69,7 +70,10 @@ const Login = (props) => {
     }
 
     return (
-        <Grid>
+        <Grid className="login-form">
+            <div className="sub-class">
+
+            </div>
             <Paper elevation={10} style={paperStyle}>
                 <Grid align='center'>
                     <Avatar style={avatarStyle}><LockOutlinedIcon /></Avatar>

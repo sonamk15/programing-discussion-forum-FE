@@ -10,6 +10,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import forumFetch from "../../utils/forumFetch";
+import './styles.scss'
 
 const Signup = (props) => {
     const paperStyle = {
@@ -68,9 +69,12 @@ const Signup = (props) => {
             alert("All feilds are required!")
         }
     };
-    console.log(props, "Pralhad")
+
     return (
-        <Grid>
+        <Grid className="signup-form">
+            <div className="sub-class">
+
+            </div>
             <Paper elevation={10} style={paperStyle}>
                 <Grid align='center'>
                     <Avatar style={avatarStyle}><LockOutlinedIcon /></Avatar>
