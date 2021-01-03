@@ -1,0 +1,21 @@
+@import '../../sass/mixins.scss';
+
+.login-form {
+  display: flex;
+  @include breakpoint-mobile {
+
+  }
+  @include breakpoint-mobile-small {
+
+  }
+
+  .sub-class { // subclass of parent class
+    // normal screen size css  
+    @include breakpoint-mobile { // mobile view css 
+
+    }
+    @include breakpoint-mobile-small { // small mobile view css
+
+    }
+  }
+}

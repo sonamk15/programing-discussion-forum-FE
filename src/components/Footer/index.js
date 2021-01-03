@@ -5,27 +5,18 @@ import {
 } from '@material-ui/core';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
+import './styles.scss';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
     padding: theme.spacing(3, 2),
-    marginTop: 'auto',
-    position: 'absolute',
+    position: 'fixed',
     bottom: 0,
-    width: '97.3%',
+    left: 0,
+    right: 0,
+    width: '100%',
     backgroundColor: '#28abe5'
   },
-  about: {
-    position: 'absolute',
-    top: '25px',
-    right: '100px'
-  },
-  contact: {
-    position: 'absolute',
-    top: '25px',
-    right: '5px'
-  }
-
 }));
 
 function Copyright() {
@@ -41,17 +32,16 @@ function Copyright() {
   );
 }
 
-
 const Footer = () => {
-
   const classes = useStyles();
-
   return (
-    <footer className={classes.footer}>
+    <div className="forum-footer">
+      <footer className={classes.footer}>
       <Container maxWidth="sm">
         <Copyright />
       </Container>
     </footer>
+    </div>
   )
 }
 

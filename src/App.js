@@ -1,8 +1,8 @@
 import './App.css';
 
-import Appbar from './components/Home/appbar'
-import Footer from './components/Home/footer'
-import AppRouter from './routing'
+import Appbar from './components/Header';
+import Footer from './components/Footer';
+import AppRouter from './routing';
 
 function App() {
 
