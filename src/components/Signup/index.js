@@ -54,7 +54,7 @@ const Signup = (props) => {
     const handelSubmit = () => {
         const {name, email, password} = initialState;
         if(name && email && password) {
-            forumFetch('api/signup', 'POST', {
+            forumFetch('api/user/signup', 'POST', {
                 data: {
                     name,
                     email,

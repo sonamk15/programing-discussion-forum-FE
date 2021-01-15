@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
-import Category from './category';
+import forumFetch from "../../utils/forumFetch";
 
+import { Category } from '../../constant';
+import AllQueries from './allQueries';
+
+
+import './styles.scss';
 
 const Query = () => {
     const [query, setQuery] = useState('');
     const [user, setUser] = useState({
-        id:null,
-        name:null,
-        profile:null
+        id: null,
+        name: null,
+        profile: null
     });
     const [topic, setTopic] = useState('');
-
-    useEffect(()=>{
+    const [allQueries, setAllQueries] = useState([]);
+    
+    useEffect(() => {
         updateUserDetails()
-    },[])
+    }, [])
 
-    const updateUserDetails = ()=>{
-        const {id, name, profile} = JSON.parse(localStorage.getItem("userDetails"))
+    const updateUserDetails = async() => {
+        const { id, name, profile } = JSON.parse(localStorage.getItem("userDetails"))
+        await getAllqueries(id);
         setUser((prvState) => (
             {
                 ...prvState,
@@ -25,7 +31,20 @@ const Query = () => {
                 name,
                 profile
             }
-        ))   
+        ))
+    }
+
+    const getAllqueries = async (id) => {
+        forumFetch(`api/query/getAllQueriesByUserId/${id}`)
+        .then((res) => {
+            if(res.data) {
+                setAllQueries(res.data)
+            } else {
+                alert("Somethig went wrong")
+            }
+        }).catch((err) => {
+            alert(err.message)
+        });
     }
 
     const addComment = () => {
@@ -33,13 +52,13 @@ const Query = () => {
             topic: topic,
             issue: query,
             userId: user.id
-        }
-        console.log(data);
-        axios.post('api/query', data)
-        .then(res => {
+        };
+
+        forumFetch('api/query', 'POST', {
+            data: data
+        }).then(res => {
             console.log(res)
-        })
-        .catch(err => console.log(err))
+        }).catch(err => console.log(err));
     }
 
     return (
@@ -58,6 +77,9 @@ const Query = () => {
 
                 <button style={{ width: '10%', height: '32px' }} type='submit' onClick={addComment}>Post</button>
             </form>
+            <AllQueries
+                allQueries={allQueries}
+            />
         </div>
     )
 }
