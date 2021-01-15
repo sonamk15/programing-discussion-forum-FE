@@ -51,11 +51,11 @@ const Login = (props) => {
             email: email,
             password: password
         }
-        axios.post('api/login', data)
+        axios.post('api/user/login', data)
             .then(res => {
                 if (res.data.token !== undefined) {
                     localStorage.setItem("token", res.data.token);
-                    axios.post('api/token/verify', { token: res.data.token })
+                    axios.post('api/user/token/verify', { token: res.data.token })
                         .then(res => {
                             if (res.data) {
                                 localStorage.setItem('userDetails', JSON.stringify(res.data))
@@ -72,7 +72,7 @@ const Login = (props) => {
     return (
         <Grid className="login-form">
             <div className="sub-class">
-                
+
             </div>
             <Paper elevation={10} style={paperStyle}>
                 <Grid align='center'>
