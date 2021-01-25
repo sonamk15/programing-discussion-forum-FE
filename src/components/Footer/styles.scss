@@ -1,21 +1,19 @@
-@import '../../sass/mixins.scss';
-
-.forum-footer {
-  display: flex;
-  @include breakpoint-mobile {
-
-  }
-  @include breakpoint-mobile-small {
-
-  }
-
-  .sub-class { // subclass of parent class
-    // normal screen size css  
-    @include breakpoint-mobile { // mobile view css 
-
+    @import '../../sass/mixins.scss';
+    .forum-footer {
+        display: flex;
+        @include breakpoint-mobile {}
+        @include breakpoint-mobile-small {}
+        .sub-class {
+            // subclass of parent class
+            // normal screen size css  
+            @include breakpoint-mobile {
+                // mobile view css 
+                // .forum-footer {
+                //     width: 100%;
+                // }
+            }
+            @include breakpoint-mobile-small {
+                // small mobile view css
+            }
+        }
     }
-    @include breakpoint-mobile-small { // small mobile view css
-
-    }
-  }
-}

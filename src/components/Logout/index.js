@@ -1,4 +1,9 @@
 import React, { useState } from 'react'
+import { Route, Redirect} from 'react-router-dom';
+
+import {
+  Link
+} from '@material-ui/core'
 
 const Logout = function (){
     const [logout, setLogout] = useState(false)
@@ -39,3 +44,5 @@ const Logout = function (){
 
     )
 }
+
+export default Logout;

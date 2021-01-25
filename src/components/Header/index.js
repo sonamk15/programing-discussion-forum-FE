@@ -50,6 +50,8 @@ const Appbar = () => {
         setAnchorEl(null);
     };
 
+    const isAuthenticated = localStorage.getItem("userDetails");
+
     return (
         <div className="forum-header" >
             <AppBar position="static" style={appbarStyle}>
@@ -70,8 +72,13 @@ const Appbar = () => {
                     <Typography variant="h6" className={classes.title}>
                         <img src={Logo} alt='logo' />
                     </Typography>
+
+                    {isAuthenticated ? <a href="/logout"><Button color="inherit">Logout</Button></a> 
+                : <div>
                     <a href="/login"><Button color="inherit">Login</Button></a>
                     <a href="/signup"><Button color="inherit">Sign Up</Button></a>
+                </div> }
+
                 </Toolbar>
             </AppBar>
         </div>
