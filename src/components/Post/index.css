@@ -1,11 +1,15 @@
-/* .comment-box{
+.comment-box{
     align-items: center;
     height: 300px;
     margin-top: 20px;
     margin-left:80px;
     margin-right:80px;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
 }
+.commentbox {
+    margin-left: 260px;
+}
+
 .form {
     margin-top: 10px;
     align-items: center;
@@ -19,14 +23,14 @@
 .list{
     margin-top: 20px;
     margin-left: 300px;
-} */
+}
 .texarea{
     margin-top: 10px;
     /* margin-right: 150px; */
 }
-/* 
-.query{
 
+.query{
+    font-family: monospace;
     margin-top:50px;
     left: 0px;
 }
@@ -36,12 +40,14 @@
  .comment{
     color:black;
     margin-top: 10px;
-    margin-left: 50px;
+    margin-left: 88px;
 } 
 
 .reply-on-comment{
-    margin-top: 10px;
-    margin-left:100px;
+    font-family: fangsong;
+
+    /* margin-top: 10px;
+    margin-left:100px; */
     
     
-} */
+}

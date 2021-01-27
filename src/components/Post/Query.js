@@ -49,7 +49,7 @@ const Query = () => {
         });
     }
 
-    const addComment = () => {
+    const addQuery = () => {
         const data = {
             topic: topic,
             issue: query,
@@ -77,7 +77,7 @@ const Query = () => {
                     onChange={(e) => setQuery(e.target.value)}>
                 </textarea>
 
-                <button className= "button-style" type='submit' onClick={addComment}>Post</button>
+                <button className= "button-style" type='submit' onClick={addQuery}>Post</button>
             </form>
             <AllQueries
                 allQueries={allQueries}

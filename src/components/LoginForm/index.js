@@ -116,10 +116,8 @@ const Login = (props) => {
                             <InputAdornment position="end">
                                 <IconButton
                                     aria-label="toggle password visibility"
-                                // onClick={handleClickShowPassword}
-                                // onMouseDown={handleMouseDownPassword}
+                          
                                 >
-                                    {/* {showPassword ? <Visibility /> : <VisibilityOff />} */}
                                 </IconButton>
                             </InputAdornment>
                         )
@@ -140,8 +138,6 @@ const Login = (props) => {
                 /><br />
                 <Button variant="contained" style={btnstyle} fullWidth onClick={handelLogin}>Sign In</Button>
                 <Typography align='right'> <Link href="#">Forgot Password</Link></Typography>
-                {/* <p>Don't have an account?</p> */}
-                {/* <Typography align='right'>Don't have an account?<Link href="#" >Sign Up</Link></Typography> */}
             </Paper>
         </Grid>
     )
