@@ -65,6 +65,8 @@ const Query = () => {
 
     return (
         <div className = "comment-box">
+            <h1 className='heading'>Welcome to the Discussion Forum</h1>
+
             <form className="form" style={{ display: 'flex' }}>
                 <span style={{ width: '10%' }} className='list'>
                     <select onChange={(e) => setTopic(e.target.value)}>

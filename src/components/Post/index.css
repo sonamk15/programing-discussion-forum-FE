@@ -45,9 +45,13 @@
 
 .reply-on-comment{
     font-family: fangsong;
+    
+}
 
-    /* margin-top: 10px;
-    margin-left:100px; */
-    
-    
+.heading {
+    text-align: center;
+    font-weight:100px;
+    font-family: serif;
+    color: lightblue;
+    font-size : 50px;
 }
