@@ -1,17 +1,35 @@
-.comment-box{
+.comment-box {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    height: 300px;
-    margin-top: 20px;
-    margin-left:80px;
-    margin-right:80px;
-    /* background-color: lightgrey; */
+    flex-direction: column;
 }
+
 .commentbox {
-    margin-left: 260px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.queri-raiser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.queri-raiser-dropdown {
+    width: 150px;
+    height: 31px;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+}
+
+#myModal {
+    display: none;
 }
 
 .form {
-    margin-top: 10px;
+    display: inline;
+    justify-content: space-between;
     align-items: center;
 }
 .form button {
@@ -25,7 +43,9 @@
     margin-left: 300px;
 }
 .texarea{
-    margin-top: 10px;
+    width: 100% !important;
+    border-radius: 10px !important;
+    /* margin-top: 10px; */
     /* margin-right: 150px; */
 }
 
@@ -50,8 +70,8 @@
 
 .heading {
     text-align: center;
-    font-weight:100px;
+    font-weight: bold;
     font-family: serif;
-    color: lightblue;
-    font-size : 50px;
+    /* color: lightblue; */
+    /* font-size : 50px; */
 }
