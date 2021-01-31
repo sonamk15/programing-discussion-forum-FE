@@ -1,5 +1,5 @@
-import "./modal.css";
-import { Category } from "../../../constant";
+import "./index.css";
+import { Category } from "../../constant";
 
 function Modal({ handleClose, show, addQuery, handelChange, category, query_text }) {
   const showHideClassName = show ? "modal display-block" : "modal display-none";

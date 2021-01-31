@@ -8,7 +8,6 @@ import Query from '../components/Post/Query';
 import Login from '../components/LoginForm';
 import Signup from '../components/Signup';
 import  Logout  from  '../components/Logout';
-import ModalPage from "../components/modalpage/index";
 import { createBrowserHistory } from "history";
 
 export const appHistory = createBrowserHistory();
@@ -21,7 +20,6 @@ const AppRouter = () => (
             <PublicRoute path='/signup' component={Signup} exact={true}/> 
             <PrivateRoute path='/logout' component={Logout} />
             <PrivateRoute path='/query' component={Query} />
-            <PrivateRoute path='/modal' component={ModalPage} />
         </Switch>
     </Router>
 )

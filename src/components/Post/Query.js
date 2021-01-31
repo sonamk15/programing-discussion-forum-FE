@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import forumFetch from "../../utils/forumFetch";
 import AllQueries from './allQueries';
-import Modal from "./modal/index";
+import Modal from "../modal/index";
 
 
 import './styles.scss';
