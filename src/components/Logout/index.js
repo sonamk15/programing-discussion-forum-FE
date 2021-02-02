@@ -13,18 +13,22 @@ const Logout = function (){
         localStorage.removeItem('token')
         setLogout(true)
 
+
     }
+    // background-color: lightblue;
+    // font-size: small;
+    // font-style: oblique;
 
     return(
         <>
           {localStorage.getItem("token") ? (
               <button
                 className="btn btn-outline-primary my-2 my-sm-0"
-                style={{ color: "white" }}
+                style={{ color: "black", float:'right', marginRight:'30px', width:'6%' }}
                 type="submit"
                 onClick={handleLogout}
               >
-                log out
+                OK
               </button>
             ) : (
               <div>

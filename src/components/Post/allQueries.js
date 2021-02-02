@@ -1,6 +1,9 @@
 import './index.css';
 
 import React, { useState } from 'react'
+
+import Avatar from '@material-ui/core/Avatar';
+
 import forumFetch from "../../utils/forumFetch";
 
 
@@ -35,8 +38,12 @@ function AllQueries({ allQueries }) {
       <div className='commentbox'>
         <ul className="ul">
           {allQueries.length !== 0 && allQueries.map((item) => (
+
             <div className="queries">
-              <li className="query" style={{}}>Q: {item.issue}</li>
+              <div className="query">
+              <Avatar>P</Avatar>
+              <li  style={{}}> {item.issue}</li>
+              </div>
 
               <li className="comment" style={{}}>{item.comment}</li>
 
@@ -45,14 +52,21 @@ function AllQueries({ allQueries }) {
 
               {item.comments.length > 0 && <ul className='reply-on-comment'>
                 {item.comments.map((item2) => (
-                  <p >
-                    <span style={{'font-weight':'bold'}}> 
-                    User Name:- {item2.user.name}
-                      </span> 
+                  <div className='reply-on-query'>
+                  
+                
+                    <span style={{'font-weight':'bold'}} className='profile' > 
+                    <Avatar>P</Avatar>
+
+                      {item2.user.name}
+                      </span>
+                      
 
                     <li className="comment">{item2.comment}<br></br>
                     </li>
-                  </p>
+                  
+                  </div>
+
                 ))}
               </ul>}
 

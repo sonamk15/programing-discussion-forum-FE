@@ -70,7 +70,8 @@ const Appbar = () => {
                         </Menu>
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        <img src={Logo} alt='logo' />
+                        Programming Discussion Forum
+                        {/* <img src={Logo} alt='logo' /> */}
                     </Typography>
 
                     {isAuthenticated ? <a href="/logout"><Button color="inherit">Logout</Button></a> 

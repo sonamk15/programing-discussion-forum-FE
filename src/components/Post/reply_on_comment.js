@@ -72,7 +72,6 @@ const Query = () => {
                             <option key={idx} value={topic}>{topic}</option>))}
                     </select>
                 </span>
-
                 <textarea className="texarea" style={{ width: '30%', borderRadius: '5px' }} name='query' placeholder='Ask Your query'
                     onChange={(e) => setQuery(e.target.value)}>
                 </textarea>

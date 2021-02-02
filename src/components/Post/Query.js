@@ -91,7 +91,7 @@ const Query = () => {
     return (
         <div className="comment-box">
             <h1 className='heading'>Welcome to the Discussion Forum</h1>
-            <button onClick={showModal}>Raise Query</button>
+            <button onClick={showModal} className='raise-query-btn'>Raise Query</button>
             <AllQueries
                 allQueries={allQueries}
             />

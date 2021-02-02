@@ -16,6 +16,7 @@
   left:50%;
   padding: 15px;
   transform: translate(-50%,-50%);
+  border-radius: 15px;
 }
 
 .display-block {
@@ -39,8 +40,12 @@
 }
 
 .modal-button button {
-  width: 70px;
-  height: 35px;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: darkmagenta;
+    color: white;
 }
 .modal-button .btn1 {
   margin-right: 10px;
@@ -60,3 +65,4 @@
 .modal-content .label {
   margin-bottom: 10px;
 }
+

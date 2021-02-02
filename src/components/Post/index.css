@@ -37,6 +37,7 @@
     height: 32px;
     margin-top:12px;
     margin-left: 10px;
+  
 }
 .list{
     margin-top: 20px;
@@ -45,8 +46,8 @@
 .texarea{
     width: 100% !important;
     border-radius: 10px !important;
-    /* margin-top: 10px; */
-    /* margin-right: 150px; */
+    background-color: lightgray;
+
 }
 
 .query{
@@ -60,7 +61,7 @@
  .comment{
     color:black;
     margin-top: 10px;
-    margin-left: 88px;
+    margin-left: 20px;
 } 
 
 .reply-on-comment{
@@ -70,8 +71,50 @@
 
 .heading {
     text-align: center;
-    font-weight: bold;
     font-family: serif;
-    /* color: lightblue; */
-    /* font-size : 50px; */
+ 
 }
+
+.query{
+    width: 90%;
+    border: 2px solid grey;
+    border-radius: 15px;
+    background-color: lightblue;
+    padding: 10px;
+    display: flex;
+    align-items: center
+}
+
+.reply-on-query {
+    width: 90%;
+
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+
+}
+
+.profile{
+
+}
+
+li{
+    margin-left: 5%;
+}
+
+.raise-query-btn{
+    width: 20%;
+    padding: 15px;
+    font-size: 15px;
+    background-color: lightsteelblue;
+}
+
+/* 
+textarea{
+    width: 70%;
+    margin-left: 10%;
+} */
+
